@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Fundamentals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3498db;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .course-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .course-details {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .quiz-container {
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .quiz-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Software Engineering Fundamentals</h1>
+    </header>
+
+    <div class="container">
+        <img src="sfwr.jpg" alt="Software Engineering" class="course-image">
+        
+        <h2>Course Overview</h2>
+        <p>This course covers the foundational concepts of software engineering, including the software development life cycle, project management, design patterns, and testing methodologies. It's designed to give you practical skills to build robust and scalable software systems.</p>
+
+        <h3>Course Content</h3>
+        <div class="course-details">
+            <h4>Module 1: Introduction to Software Engineering</h4>
+            <p>Understand the fundamentals of software engineering, including the software development life cycle (SDLC), methodologies, and the role of a software engineer in a development team.</p>
+
+            <h4>Module 2: Software Development Life Cycle (SDLC)</h4>
+            <p>Explore the phases of the SDLC: requirements gathering, design, development, testing, deployment, and maintenance.</p>
+
+            <h4>Module 3: Design Patterns and Architecture</h4>
+            <p>Learn about common design patterns such as MVC, Singleton, Factory, and more. Understand how these patterns help to build scalable and maintainable systems.</p>
+
+            <h4>Module 4: Version Control Systems</h4>
+            <p>Get hands-on experience with version control tools like Git and GitHub to manage source code and collaborate with other developers.</p>
+
+            <h4>Module 5: Software Testing</h4>
+            <p>Learn the importance of software testing, including unit testing, integration testing, and system testing, and how to write effective test cases.</p>
+
+            <h4>Module 6: Project Management and Agile Methodology</h4>
+            <p>Understand how Agile methodologies (e.g., Scrum, Kanban) are used in software development to manage teams, deliver incremental progress, and ensure high-quality products.</p>
+        </div>
+
+        <h2>Software Engineering Quiz</h2>
+        <div class="quiz-container">
+            <form id="quiz-form">
+                <div class="question">
+                    <p>1. What is the first phase of the Software Development Life Cycle (SDLC)?</p>
+                    <input type="radio" name="q1" value="a"> a) Design<br>
+                    <input type="radio" name="q1" value="b"> b) Testing<br>
+                    <input type="radio" name="q1" value="c"> c) Requirements Gathering<br>
+                    <input type="radio" name="q1" value="d"> d) Deployment<br>
+                </div>
+                <div class="question">
+                    <p>2. Which of the following is NOT a design pattern?</p>
+                    <input type="radio" name="q2" value="a"> a) Singleton<br>
+                    <input type="radio" name="q2" value="b"> b) Factory<br>
+                    <input type="radio" name="q2" value="c"> c) Algorithm<br>
+                    <input type="radio" name="q2" value="d"> d) MVC<br>
+                </div>
+                <div class="question">
+                    <p>3. What is the primary goal of version control systems like Git?</p>
+                    <input type="radio" name="q3" value="a"> a) To track changes in source code<br>
+                    <input type="radio" name="q3" value="b"> b) To compile code<br>
+                    <input type="radio" name="q3" value="c"> c) To manage hardware<br>
+                    <input type="radio" name="q3" value="d"> d) To monitor server performance<br>
+                </div>
+                <div class="question">
+                    <p>4. In Agile methodology, what is the typical duration of a Sprint?</p>
+                    <input type="radio" name="q4" value="a"> a) 1 week<br>
+                    <input type="radio" name="q4" value="b"> b) 2-4 weeks<br>
+                    <input type="radio" name="q4" value="c"> c) 6 months<br>
+                    <input type="radio" name="q4" value="d"> d) 1 year<br>
+                </div>
+                <div class="question">
+                    <p>5. Which of the following is a testing method used to check individual units of code?</p>
+                    <input type="radio" name="q5" value="a"> a) Integration Testing<br>
+                    <input type="radio" name="q5" value="b"> b) Unit Testing<br>
+                    <input type="radio" name="q5" value="c"> c) System Testing<br>
+                    <input type="radio" name="q5" value="d"> d) User Acceptance Testing<br>
+                </div>
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </form>
+
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+
+       
+
+        <p><a href="index.html">Back to Course List</a></p>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 5;
+            var form = document.getElementById('quiz-form');
+
+            // Correct Answers
+            var answers = {
+                q1: 'c', // Requirements Gathering
+                q2: 'c', // Algorithm (not a design pattern)
+                q3: 'a', // To track changes in source code
+                q4: 'b', // 2-4 weeks
+                q5: 'b'  // Unit Testing
+            };
+
+            // Check answers
+            for (var i = 1; i <= totalQuestions; i++) {
+                var q = 'q' + i;
+                var selectedAnswer = form.querySelector('input[name="' + q + '"]:checked');
+                
+                if (selectedAnswer && selectedAnswer.value === answers[q]) {
+                    score++;
+                }
+            }
+
+            // Display the result
+            var resultText = 'You scored ' + score + ' out of ' + totalQuestions + '.';
+            if (score === totalQuestions) {
+                resultText += ' Excellent work!';
+            } else if (score >= totalQuestions / 2) {
+                resultText += ' Good effort!';
+            } else {
+                resultText += ' Keep practicing and learning!';
+            }
+
+            document.getElementById('quiz-result').innerText = resultText;
+        }
+    </script>
+
+</body>
+</html>

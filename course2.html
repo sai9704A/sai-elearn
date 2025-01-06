@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science and Analytics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #3498db;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .course-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .course-details {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .progress-container {
+            margin: 20px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 20px;
+            margin-top: 10px;
+        }
+        .progress {
+            height: 100%;
+            width: 0%;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+        .quiz-container {
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .quiz-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Data Science and Analytics</h1>
+</header>
+
+<div class="container">
+    <img src="datasc.jpg" alt="Machine Learning" class="course-image">
+
+    <h2>Progress</h2>
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <p id="progress-text">0% Completed</p>
+    </div>
+    <h2>Course Overview</h2>
+    <p>Gain essential skills in data science, including data analysis, visualization, and more with hands-on exercises.</p>
+    <ul>
+        <li>Python for Data Science</li>
+        <li>Data Visualization Techniques</li>
+        <li>Introduction to Machine Learning</li>
+        <li>Working with Big Data</li>
+    </ul>
+
+    <h2>What You Will Learn</h2>
+    <div class="course-details">
+        <h3>Module 1: Data Analysis with Python</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/r-uOLxNrNk8" 
+                title="Data Analysis with Python" frameborder="0" allowfullscreen></iframe>
+        <p>Learn how to use Python for data cleaning, analysis, and manipulation.</p>
+        <button class="btn" onclick="markAsCompleted(1)">Mark as Completed</button>
+
+        <h3>Module 2: Data Visualization</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7kPqESo1vRw" 
+                title="Data Visualization Techniques" frameborder="0" allowfullscreen></iframe>
+        <p>Learn to create visualizations using libraries such as Matplotlib and Seaborn.</p>
+        <button class="btn" onclick="markAsCompleted(2)">Mark as Completed</button>
+
+        <h3>Module 3: Introduction to Machine Learning</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ukzFI9rgwfU" 
+                title="Introduction to Machine Learning" frameborder="0" allowfullscreen></iframe>
+        <p>Understand the fundamentals of machine learning algorithms like regression and classification.</p>
+        <button class="btn" onclick="markAsCompleted(3)">Mark as Completed</button>
+    </div>
+
+    <h2>Quiz</h2>
+        <div class="quiz-container">
+            <form id="quiz-form">
+                <div class="question">
+                    <p>1. What is the primary language used in data science?</p>
+                    <input type="radio" name="q1" value="a"> a) JavaScript<br>
+                    <input type="radio" name="q1" value="b"> b) Python<br>
+                    <input type="radio" name="q1" value="c"> c) Java<br>
+                    <input type="radio" name="q1" value="d"> d) C++<br>
+                </div>
+                <div class="question">
+                    <p>2. Which library is commonly used for data visualization in Python?</p>
+                    <input type="radio" name="q2" value="a"> a) TensorFlow<br>
+                    <input type="radio" name="q2" value="b"> b) Seaborn<br>
+                    <input type="radio" name="q2" value="c"> c) Flask<br>
+                    <input type="radio" name="q2" value="d"> d) Django<br>
+                </div>
+                <div class="question">
+                    <p>3. What is the main purpose of machine learning?</p>
+                    <input type="radio" name="q3" value="a"> a) Data cleaning<br>
+                    <input type="radio" name="q3" value="b"> b) Data visualization<br>
+                    <input type="radio" name="q3" value="c"> c) Building predictive models<br>
+                    <input type="radio" name="q3" value="d"> d) Writing complex algorithms<br>
+                </div>
+                <div class="question">
+                    <p>4. Which of the following is a type of supervised learning?</p>
+                    <input type="radio" name="q4" value="a"> a) K-means clustering<br>
+                    <input type="radio" name="q4" value="b"> b) Linear regression<br>
+                    <input type="radio" name="q4" value="c"> c) Principal Component Analysis (PCA)<br>
+                    <input type="radio" name="q4" value="d"> d) Hierarchical clustering<br>
+                </div>
+                <div class="question">
+                    <p>5. What is Big Data?</p>
+                    <input type="radio" name="q5" value="a"> a) Data that is small in size<br>
+                    <input type="radio" name="q5" value="b"> b) Data that is stored in a single database<br>
+                    <input type="radio" name="q5" value="c"> c) Large volumes of data that require specialized tools for analysis<br>
+                    <input type="radio" name="q5" value="d"> d) Data that only contains text<br>
+                </div>
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </form>
+
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+
+
+
+    <p><a href="index.html">Back to Course List</a></p>
+</div>
+
+<script>
+    let completedModules = 0;
+    const totalModules = 3;
+
+    function markAsCompleted(module) {
+        const button = document.querySelector(`button[onclick="markAsCompleted(${module})"]`);
+        if (button.disabled) return;
+
+        button.disabled = true;
+        button.textContent = "Completed";
+
+        completedModules++;
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const progressPercent = (completedModules / totalModules) * 100;
+        const progressBar = document.getElementById("progress");
+        const progressText = document.getElementById("progress-text");
+
+        progressBar.style.width = progressPercent + "%";
+        progressText.textContent = progressPercent + "% Completed";
+
+        if (progressPercent === 100) {
+            setTimeout(() => alert("Congratulations! You have completed the course."), 300);
+        }
+    }
+    function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 5;
+            var form = document.getElementById('quiz-form');
+
+            // Updated answers
+            var answers = {
+                q1: 'a', // <ul>
+                q2: 'a', // background-color
+                q3: 'a', // alert()
+                q4: 'a', // <button>
+                q5: 'a'  // width and height including padding and borders
+            };
+
+            // Check answers
+            for (var i = 1; i <= totalQuestions; i++) {
+                var q = 'q' + i;
+                var selectedAnswer = form.querySelector('input[name="' + q + '"]:checked');
+                
+                if (selectedAnswer && selectedAnswer.value === answers[q]) {
+                    score++;
+                }
+            }
+
+            // Show the result
+            var resultText = 'You scored ' + score + ' out of ' + totalQuestions + '.';
+            document.getElementById('quiz-result').innerText = resultText;
+        }
+</script>
+
+</body>
+</html>

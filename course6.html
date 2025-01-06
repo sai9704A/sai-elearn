@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3498db;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .course-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .course-details {
+            margin-top: 20px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .progress-bar {
+            margin-top: 20px;
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-bar-fill {
+            background-color: #3498db;
+            height: 20px;
+            width: 0;
+            border-radius: 25px;
+            transition: width 0.5s ease-in-out;
+        }
+        .progress-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 0;
+            line-height: 20px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .quiz-container {
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .quiz-result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Graphic Design Basics</h1>
+    </header>
+
+    <div class="container">
+        <img src="grph.webp" alt="Graphic Design" class="course-image">
+        
+        <h2>Progress</h2>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            <div class="progress-text" id="progress-text">0% Complete</div>
+        </div>
+
+        <h2>Course Overview</h2>
+        <p>Learn the fundamentals of graphic design, including principles of design, typography, color theory, and how to use industry-standard tools like Adobe Photoshop and Illustrator.</p>
+
+        <h3>Course Content</h3>
+        <div class="course-details">
+            <h4>Module 1: Introduction to Graphic Design</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YqQx75OPRa0?si=ecPooNaBTC2nHxrV" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            <p>Understand the basic principles of design such as balance, contrast, alignment, and repetition.</p>
+            <button class="btn" onclick="markAsCompleted(1)">Mark as Completed</button>
+
+            <h4>Module 2: Typography</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AXpxZMRM1EY?si=2p3gH6j-i05FvXA9" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            <p>Learn the art of choosing and using typefaces, font styles, and creating legible and attractive typography.</p>
+            <button class="btn" onclick="markAsCompleted(2)">Mark as Completed</button>
+
+            <h4>Module 3: Color Theory</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pAK0cvVQr_4?si=MtH7ykXyrfmk2zhQ" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            <p>Study how colors work together and how to apply color theory to enhance your design projects.</p>
+            <button class="btn" onclick="markAsCompleted(3)">Mark as Completed</button>
+
+            <h4>Module 4: Graphic Design Tools</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iAJkRdwzZqg?si=16fZgvYLdc6klUCv" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            <p>Get hands-on experience with tools like Adobe Photoshop, Illustrator, and InDesign for creating professional designs.</p>
+            <button class="btn" onclick="markAsCompleted(4)">Mark as Completed</button>
+        </div>
+
+        <h2>Graphic Design Quiz</h2>
+        <div class="quiz-container">
+            <form id="quiz-form">
+                <div class="question">
+                    <p>1. Which of the following is NOT one of the basic principles of graphic design?</p>
+                    <input type="radio" name="q1" value="a"> a) Balance<br>
+                    <input type="radio" name="q1" value="b"> b) Contrast<br>
+                    <input type="radio" name="q1" value="c"> c) Layout<br>
+                    <input type="radio" name="q1" value="d"> d) Alignment<br>
+                </div>
+                <div class="question">
+                    <p>2. Which tool is used primarily for vector-based designs?</p>
+                    <input type="radio" name="q2" value="a"> a) Adobe Photoshop<br>
+                    <input type="radio" name="q2" value="b"> b) Adobe Illustrator<br>
+                    <input type="radio" name="q2" value="c"> c) CorelDRAW<br>
+                    <input type="radio" name="q2" value="d"> d) Adobe InDesign<br>
+                </div>
+                <div class="question">
+                    <p>3. What does typography refer to in graphic design?</p>
+                    <input type="radio" name="q3" value="a"> a) The arrangement of images<br>
+                    <input type="radio" name="q3" value="b"> b) The style and appearance of text<br>
+                    <input type="radio" name="q3" value="c"> c) The color scheme of a design<br>
+                    <input type="radio" name="q3" value="d"> d) The layout of the page<br>
+                </div>
+                <div class="question">
+                    <p>4. What is the color wheel used for in design?</p>
+                    <input type="radio" name="q4" value="a"> a) To determine the balance of colors<br>
+                    <input type="radio" name="q4" value="b"> b) To show the relationship between colors<br>
+                    <input type="radio" name="q4" value="c"> c) To find complementary colors<br>
+                    <input type="radio" name="q4" value="d"> d) All of the above<br>
+                </div>
+                <div class="question">
+                    <p>5. Which software is commonly used for layout design and typesetting?</p>
+                    <input type="radio" name="q5" value="a"> a) Adobe Photoshop<br>
+                    <input type="radio" name="q5" value="b"> b) Adobe Illustrator<br>
+                    <input type="radio" name="q5" value="c"> c) Adobe InDesign<br>
+                    <input type="radio" name="q5" value="d"> d) Figma<br>
+                </div>
+                <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+            </form>
+
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+
+        <p><a href="index.html">Back to Course List</a></p>
+    </div>
+
+    <script>
+        let completedModules = 0;
+        const totalModules = 4;
+
+        function markAsCompleted(module) {
+            const button = document.querySelector(`button[onclick="markAsCompleted(${module})"]`);
+            if (button.disabled) return;
+
+            button.disabled = true;
+            button.textContent = "Completed";
+
+            completedModules++;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progressPercent = (completedModules / totalModules) * 100;
+            const progressBar = document.getElementById("progress-bar-fill");
+            const progressText = document.getElementById("progress-text");
+
+            progressBar.style.width = progressPercent + "%";
+            progressText.textContent = Math.round(progressPercent) + "% Complete";
+
+            if (progressPercent === 100) {
+                setTimeout(() => alert("Congratulations! You have completed all modules."), 300);
+            }
+        }
+
+        function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 5;
+            var form = document.getElementById('quiz-form');
+
+            // Correct Answers
+            var answers = {
+                q1: 'c', // Layout
+                q2: 'b', // Adobe Illustrator
+                q3: 'b', // The style and appearance of text
+                q4: 'd', // All of the above
+                q5: 'c'  // Adobe InDesign
+            };
+
+            // Check answers
+            for (var i = 1; i <= totalQuestions; i++) {
+                var q = 'q' + i;
+                var selectedAnswer = form.querySelector('input[name="' + q + '"]:checked');
+                
+                if (selectedAnswer && selectedAnswer.value === answers[q]) {
+                    score++;
+                }
+            }
+
+            // Display the result
+            var resultText = 'You scored ' + score + ' out of ' + totalQuestions + '.';
+            if (score === totalQuestions) {
+                resultText += ' Excellent work!';
+            } else if (score >= totalQuestions / 2) {
+                resultText += ' Good effort!';
+            } else {
+                resultText += ' Keep practicing and learning!';
+            }
+
+            document.getElementById('quiz-result').innerText = resultText;
+        }
+
+        updateProgress();
+    </script>
+
+</body>
+</html>
